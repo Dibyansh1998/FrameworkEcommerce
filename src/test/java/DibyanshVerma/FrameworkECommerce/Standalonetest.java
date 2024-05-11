@@ -91,13 +91,13 @@ static WebDriver driver= null;
 		return new Object[][] { { data1.get(0) }, { data1.get(1) } };
 	}
 	
-	public File getScreenshot(String testCaseName) throws IOException
+	public  String getScreenshot(String testCaseName, WebDriver driver) throws IOException
 	{
 		TakesScreenshot ts=(TakesScreenshot)driver;
 		File Source= ts.getScreenshotAs(OutputType.FILE);
 		File DestinationFile= new File(System.getProperty("user.dir")+"//reports"+testCaseName+".png");
 		FileUtils.copyFile(Source, DestinationFile);
-		return DestinationFile;
+		return System.getProperty("user.dir")+"//reports"+testCaseName+".png";
 	}
 
 }
