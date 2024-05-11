@@ -1,11 +1,16 @@
 package DibyanshVerma.FrameworkECommerce;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,9 +20,12 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import JsonData.DataReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Standalonetest {
+
+static WebDriver driver= null;
 
 //	static String productName = "ZARA COAT 3";
 
@@ -66,18 +74,30 @@ public class Standalonetest {
 	}
 
 	@DataProvider
-	public Object[][] getData() {
-		HashMap<String, String> map = new HashMap<String, String>();
-		map.put("email", "postmanLupin@gmail.com");
-		map.put("password", "Test@1234");
-		map.put("productName", "ZARA COAT 3");
+	public Object[][] getData() throws IOException {
+//		HashMap<String, String> map = new HashMap<String, String>();
+//		map.put("email", "postmanLupin@gmail.com");
+//		map.put("password", "Test@1234");
+//		map.put("productName", "ZARA COAT 3");
+//
+//		HashMap<String, String> map1 = new HashMap<String, String>();
+//		map1.put("email", "Ishu.verma@gmail.com");
+//		map1.put("password", "Test@1234");
+//		map1.put("productName", "ADIDAS ORIGINAL");
+		
+		DataReader data= new DataReader();
+		List<HashMap<String,String>> data1= data.getJsonDataToMap();
 
-		HashMap<String, String> map1 = new HashMap<String, String>();
-		map1.put("email", "Ishu.verma@gmail.com");
-		map1.put("password", "Test@1234");
-		map1.put("productName", "ADIDAS ORIGINAL");
-
-		return new Object[][] { { map }, { map1 } };
+		return new Object[][] { { data1.get(0) }, { data1.get(1) } };
+	}
+	
+	public File getScreenshot(String testCaseName) throws IOException
+	{
+		TakesScreenshot ts=(TakesScreenshot)driver;
+		File Source= ts.getScreenshotAs(OutputType.FILE);
+		File DestinationFile= new File(System.getProperty("user.dir")+"//reports"+testCaseName+".png");
+		FileUtils.copyFile(Source, DestinationFile);
+		return DestinationFile;
 	}
 
 }
