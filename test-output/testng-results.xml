@@ -2,15 +2,15 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-11T12:57:02 IST" name="Suite" finished-at="2024-05-11T12:57:22 IST" duration-ms="20691">
+  <suite started-at="2024-05-12T08:16:32 IST" name="Suite" finished-at="2024-05-12T08:16:56 IST" duration-ms="23964">
     <groups>
       <group name="Purchase">
         <method signature="Standalonetest.submitorder(java.util.HashMap)[pri:0, instance:DibyanshVerma.FrameworkECommerce.Standalonetest@10289886]" name="submitorder" class="DibyanshVerma.FrameworkECommerce.Standalonetest"/>
       </group> <!-- Purchase -->
     </groups>
-    <test started-at="2024-05-11T12:57:02 IST" name="Test" finished-at="2024-05-11T12:57:22 IST" duration-ms="20691">
+    <test started-at="2024-05-12T08:16:32 IST" name="Test" finished-at="2024-05-12T08:16:56 IST" duration-ms="23964">
       <class name="DibyanshVerma.FrameworkECommerce.Standalonetest">
-        <test-method signature="submitorder(java.util.HashMap)[pri:0, instance:DibyanshVerma.FrameworkECommerce.Standalonetest@10289886]" started-at="2024-05-11T12:57:02 IST" name="submitorder" data-provider="getData" finished-at="2024-05-11T12:57:12 IST" duration-ms="10643" status="PASS">
+        <test-method signature="submitorder(java.util.HashMap)[pri:0, instance:DibyanshVerma.FrameworkECommerce.Standalonetest@10289886]" started-at="2024-05-12T08:16:33 IST" name="submitorder" data-provider="getData" finished-at="2024-05-12T08:16:45 IST" duration-ms="12384" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -21,7 +21,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- submitorder -->
-        <test-method signature="submitorder(java.util.HashMap)[pri:0, instance:DibyanshVerma.FrameworkECommerce.Standalonetest@10289886]" started-at="2024-05-11T12:57:12 IST" name="submitorder" data-provider="getData" finished-at="2024-05-11T12:57:22 IST" duration-ms="9812" status="PASS">
+        <test-method signature="submitorder(java.util.HashMap)[pri:0, instance:DibyanshVerma.FrameworkECommerce.Standalonetest@10289886]" started-at="2024-05-12T08:16:45 IST" name="submitorder" data-provider="getData" finished-at="2024-05-12T08:16:56 IST" duration-ms="11354" status="PASS">
           <params>
             <param index="0">
               <value>
